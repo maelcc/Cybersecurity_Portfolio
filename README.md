@@ -1,5 +1,3 @@
-# Cybersecurity_Portfolio
-
 # Cybersecurity Portfolio — Maël Conejos Crusson
 
 Welcome to my cybersecurity project portfolio. This repo groups 11 hands-on projects covering cybersecurity. Each project lives in its own sub-folder with a dedicated `README.md` describing its purpose, the tools and methods used, and my individual contribution.
