@@ -1,63 +1,45 @@
-# TEMP
-
-# Cybersecurity Portfolio - Maël Conejos Crusson
-
-Welcome to my cybersecurity project portfolio. This repo groups 11 hands-on projects covering cybersecurity. Each project lives in its own sub-folder with a dedicated `README.md` describing its purpose, the tools and methods used, and my individual contribution.
-
-> **Disclaimer:** All projects in this portfolio were conducted in controlled, authorised environments (labs, sandboxes, or systems I own or have explicit written permission to test). They are shared for educational and portfolio purposes only.
+# ~{REPO WORK IN PROGRESS}~
 
 ---
+
+# Cybersecurity Portfolio
+
+Maël Conejos Crusson
+
+This repository is a collection of 11 hands-on cybersecurity projects that I built to develop and demonstrate practical skills across the field. Each project is self-contained in its own folder and documents the full journey from initial goal to final result: what the project set out to achieve, the technologies, tools and methods used, and my individual contribution to the work.
+
+## About
+
+The projects in this portfolio were carried out in isolated lab environments, on systems I own, or on platforms designed for security training. Together they cover [##########], and reflect both offensive and defensive perspectives on common security problems.
 
 ## Projects
 
-| # | Project | Domain | Status |
-|---|---------|--------|--------|
-| 1 | [Project 01 — *name to be added*](./01-project-name/) | *e.g. Network Security* | ✅ Completed |
-| 2 | [Project 02 — *name to be added*](./02-project-name/) | *e.g. Web App Security* | ✅ Completed |
-| 3 | [Project 03 — *name to be added*](./03-project-name/) | *e.g. Digital Forensics* | ✅ Completed |
-| 4 | [Project 04 — *name to be added*](./04-project-name/) | *e.g. Malware Analysis* | ✅ Completed |
-| 5 | [Project 05 — *name to be added*](./05-project-name/) | *e.g. Incident Response* | ✅ Completed |
-| 6 | [Project 06 — *name to be added*](./06-project-name/) | *e.g. Cryptography* | ✅ Completed |
-| 7 | [Project 07 — *name to be added*](./07-project-name/) | *e.g. Threat Intelligence* | ✅ Completed |
-| 8 | [Project 08 — *name to be added*](./08-project-name/) | *e.g. SIEM / Blue Team* | ✅ Completed |
-| 9 | [Project 09 — *name to be added*](./09-project-name/) | *e.g. Pentesting* | ✅ Completed |
-| 10 | [Project 10 — *name to be added*](./10-project-name/) | *e.g. Reverse Engineering* | ✅ Completed |
-| 11 | [Project 11 — *name to be added*](./11-project-name/) | *e.g. Scripting & Automation* | ✅ Completed |
+| # | Project | Focus Area |
+| --- | --- | --- |
+| 01 | [Project title] | [Focus area] |
+| 02 | [Project title] | [Focus area] |
+| 03 | [Project title] | [Focus area] |
+| 04 | [Project title] | [Focus area] |
+| 05 | [Project title] | [Focus area] |
+| 06 | [Project title] | [Focus area] |
+| 07 | [Project title] | [Focus area] |
+| 08 | [Project title] | [Focus area] |
+| 09 | [Project title] | [Focus area] |
+| 10 | [Project title] | [Focus area] |
+| 11 | [Project title] | [Focus area] |
 
-*The table above will be filled in with each project's actual name, domain, and link as they are added.*
+## Project Documentation
 
----
+Every project folder contains its own README that follows the same structure:
 
-## How to Navigate This Portfolio
+- **Purpose and outcome**: what the project set out to do and what it delivered
+- **Technologies, tools and methods**: the stack and techniques applied
+- **Individual contribution**: my specific role and work in the project
 
-Each project subfolder contains:
+## How to Navigate
 
-- **`README.md`** — Purpose & outcome, technologies/tools/methods used, and my individual contribution
-- **Project files** — Code, configurations, reports, or write-ups (sanitized of any sensitive data)
+Each folder is independent and can be explored in any order. Start with the README inside a project folder to understand its purpose, then follow the setup and usage notes it contains. The projects do not share dependencies.
 
-Start with the table above, or explore the folders directly.
+## Legal and Ethical Disclaimer
 
----
-
-## Skills Demonstrated Across the Portfolio
-
-- **Offensive security:** vulnerability assessment, exploitation in lab environments, web application testing
-- **Defensive security:** log analysis, incident response, hardening, detection rules
-- **Tooling:** *e.g. Wireshark, Nmap, Burp Suite, Metasploit, Splunk, Volatility, YARA, Python, Bash…* (to be finalized per project)
-- **Methodology:** structured documentation, reproducible testing, and clear reporting
-
----
-
-## Contact
-
-**Maël Conejos Crusson**
-
-- GitHub: maelcc (https://github.com/maelcc)
-- LinkedIn: maelcc (https://www.linkedin.com/in/maelcc)
-- Email: maelcc011@gmail.com
-
----
-
-## License
-
-This portfolio is shared for viewing and educational reference. All projects were produced by me unless stated otherwise in the individual project READMEs. Please contact me before reusing any content.
+All activities documented in this portfolio were performed in controlled environments, on systems I own, or on platforms explicitly designed for security training. This material is published for educational and portfolio purposes only. Do not use these techniques, scripts or findings against any system without explicit authorisation from its owner. I do not condone or take responsibility for any misuse of the information in this repository.
