@@ -1,0 +1,6 @@
+There are no requirements for this project.
+
+The only things that are imported are built-in:
+- import csv
+- import sys
+- from unittest.mock import patch
