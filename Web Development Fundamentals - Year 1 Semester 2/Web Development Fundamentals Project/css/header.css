@@ -1,0 +1,88 @@
+/** Header **/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #111111;
+    box-shadow: 4px 4px 20px 2px #000000AA;
+}
+
+
+/* Images */
+
+header img {
+    height: 60px;
+}
+
+
+/* Horizontal Nav Bar */
+
+header nav ul {
+    margin: 0;
+    padding: 5px;
+    list-style-type: none;
+    overflow: hidden;
+    border: 1px solid grey;
+    border-radius: 8px;
+}
+
+header nav li {
+    display: flex;
+    align-items: center; /* For centering the hr element in the nav */
+    float: left;
+}
+
+header nav a {
+    padding: 5px 20px;
+    width: 90px;
+    text-align: center;
+    font-size: larger;
+    color: lightgray;
+}
+
+header nav a:hover,
+header nav a.active {
+    padding: 4px 19px; /* You will be seeing something similar as you go though the css pages because the border is 1px, so I need to reduce the padding by 1 on each end to not have the element grow */
+    border: 1px solid tan;
+    border-radius: 4px;
+}
+
+header nav hr {
+    margin: 0 4px;
+    height: 15px;
+    width: 2px;
+}
+
+
+/* Screen Size Area */
+
+@media (max-width: 1125px) {
+    header {
+        flex-direction: column-reverse; /* Makes the text logo the top element */
+    }
+
+    header img:first-of-type { /* Removes the wolf logo, it's too square */
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    header nav ul {
+        margin: 0;
+        padding: 5px;
+    }
+    
+    header nav li {
+        flex-direction: column; /* To convert it into a vertical nav bar */
+        float: none;
+    }
+
+    header nav hr {
+        height: 1px;
+        width: 40%;
+        margin: 2px;
+    }
+}

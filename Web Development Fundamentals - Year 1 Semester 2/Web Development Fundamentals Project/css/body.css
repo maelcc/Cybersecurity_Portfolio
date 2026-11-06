@@ -1,0 +1,54 @@
+/** Body **/
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* To keep the footer at the bottom */
+    margin: 0;
+    background-image: url('../images/geralt_1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    line-height: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: lightgrey;
+}
+
+
+/* General Elements */
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:active,
+a:visited {
+    color: lightgray;
+}
+
+a:hover,
+a:link.active {
+    color: tan;
+}
+
+hr {
+    height: 2px;
+    width: 50%;
+    background-color: tan;
+    border-width: 0;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+}
+
+h1,
+h2 {
+    font-family: 'Papyrus', 'Brush Script MT', cursive;
+    line-height: 30px;
+}

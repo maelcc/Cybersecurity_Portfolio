@@ -1,0 +1,40 @@
+/** Footer **/
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #111111;
+}
+
+
+/* Text */
+
+footer p {
+    font-size: smaller;
+}
+
+
+/* Social Media Links */
+
+footer img {
+    padding: 4px;
+    width: 28px;
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: 4px 4px 20px 2px #000000AA;
+}
+
+footer img:hover {
+    background-color: tan;
+}
+
+
+/* Screen Size Area */
+
+@media (max-width: 800px) {
+    footer {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStart :: User Dashboard</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Font for NothingOS Vibe - Using monospace/dot-matrix feel */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+        
+        /* Define the core monochrome theme */
+        :root {
+            --color-primary: #FFFFFF;
+            --color-secondary: #000000;
+            --color-accent: #EF4444; /* Functional Red */
+            --font-mono: 'Space Mono', monospace;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+        }
+
+        /* Specific style for the dot-matrix inspired elements */
+        .dot-matrix-text {
+            font-family: var(--font-mono);
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+        .access-granted {
+            background-color: var(--color-accent);
+            color: var(--color-secondary);
+        }
+        .access-card {
+            background-color: #111827; /* Darker than body */
+            border: 1px solid #374151;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 md:p-12">
+
+    <!-- Header & Logout -->
+    <header class="flex justify-between items-center border-b border-gray-700/50 pb-4 mb-10">
+        <h1 class="text-2xl font-bold tracking-tight">TECHSTART INTRA</h1>
+        <a href="/logout" class="text-sm text-gray-400 hover:text-red-500 transition-colors uppercase dot-matrix-text">
+            LOGOUT
+            <span class="inline-block ml-1 text-red-500">&#9658;</span>
+        </a>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <!-- User Identity Panel -->
+        <section class="lg:col-span-1 access-card rounded-3xl p-6 flex flex-col items-center text-center">
+            <h2 class="text-lg text-gray-400 uppercase dot-matrix-text mb-6">CURRENT IDENTITY</h2>
+
+            <!-- Profile Picture -->
+            {% if session['profile_pic'] %}
+                <img src="{{ session['profile_pic'] }}" alt="Profile Picture" 
+                     class="w-36 h-36 rounded-full object-cover border-4 border-white shadow-lg mb-6 transition-transform duration-300 hover:scale-105"
+                     onerror="this.onerror=null;this.src='https://placehold.co/150x150/111827/FFFFFF?text=NO+PIC';">
+            {% endif %}
+
+            <!-- User Info -->
+            <h3 class="text-3xl font-bold mb-1">{{ session['user'] }}</h3>
+            {% set role = session['role'] %}
+            <div class="inline-flex items-center space-x-2 p-2 rounded-full text-sm font-semibold tracking-wider dot-matrix-text uppercase
+                        {% if role == 'Developer' %} bg-green-500/20 text-green-300
+                        {% elif role == 'QA Tester' %} bg-orange-500/20 text-orange-300
+                        {% elif role == 'Project Manager' %} bg-blue-500/20 text-blue-300
+                        {% else %} bg-gray-500/20 text-gray-300 {% endif %}">
+                <span class="h-2 w-2 rounded-full bg-current"></span>
+                <span>{{ role }}</span>
+            </div>
+
+            <!-- Security Status -->
+            <div class="mt-8 pt-4 border-t border-gray-700/50 w-full">
+                <p class="text-sm text-gray-500">Security Status</p>
+                <p class="text-base text-red-500 dot-matrix-text">ENCRYPTED/AUTHORIZED</p>
+            </div>
+        </section>
+
+
+        <!-- Access Capabilities Panel -->
+        <section class="lg:col-span-2 space-y-8">
+            
+            <h2 class="text-xl font-bold tracking-tight border-b border-red-500/50 pb-2 mb-4">CAPABILITIES & WORKFLOW ACCESS</h2>
+            
+            <!-- Default Accesses (All roles can see) -->
+            <div class="access-card rounded-2xl p-6">
+                <h3 class="text-lg font-semibold mb-3">INTERNAL ANNOUNCEMENTS</h3>
+                <p class="text-sm text-gray-400 dot-matrix-text">SECURE LOGIN SUCCESSFUL. ALL SESSIONS ARE LOGGED AND ENCRYPTED VIA TLS 1.2.</p>
+                <p class="text-sm text-gray-500 mt-2">Latest Patch: [2025-11-29]. Next Review: [2026-01-01].</p>
+            </div>
+
+            <!-- Role-Specific Access Card -->
+            {% if role == 'Developer' %}
+            <div class="access-card rounded-2xl p-6 border-l-4 border-green-500">
+                <div class="flex items-center mb-3">
+                    <span class="h-6 w-6 text-green-500 mr-2">
+                        <!-- Lucide Server Icon (Inline SVG) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                    </span>
+                    <h3 class="text-lg font-semibold text-green-300">AZURE VM/SQL INFRASTRUCTURE ACCESS</h3>
+                </div>
+                <p class="text-sm text-gray-400">Custom IAM role grants **READ/WRITE** privileges for VM and SQL Server configuration. Power actions are explicitly denied.</p>
+                <p class="text-xs mt-2 dot-matrix-text text-red-500">WARNING: HIGH PRIVILEGE ACCESS. DENY: START/STOP VM.</p>
+            </div>
+
+            {% elif role == 'QA Tester' %}
+            <div class="access-card rounded-2xl p-6 border-l-4 border-orange-500">
+                <div class="flex items-center mb-3">
+                    <span class="h-6 w-6 text-orange-500 mr-2">
+                        <!-- Lucide Cloud Icon (Inline SVG) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+                    </span>
+                    <h3 class="text-lg font-semibold text-orange-300">AZURE STORAGE MANAGEMENT (BLOB)</h3>
+                </div>
+                <p class="text-sm text-gray-400">Custom IAM role grants **READ/WRITE** access to the Blob Storage container (`profile-pictures`) for asset management. All other services are denied.</p>
+                <p class="text-xs mt-2 dot-matrix-text text-orange-500">STATUS: STORAGE R/W ENABLED. VM/SQL DENIED.</p>
+            </div>
+
+            {% elif role == 'Project Manager' %}
+            <div class="access-card rounded-2xl p-6 border-l-4 border-blue-500">
+                <div class="flex items-center mb-3">
+                    <span class="h-6 w-6 text-blue-500 mr-2">
+                        <!-- Lucide Trending Up Icon (Inline SVG) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    </span>
+                    <h3 class="text-lg font-semibold text-blue-300">HIGH-LEVEL RESOURCE STATUS</h3>
+                </div>
+                <p class="text-sm text-gray-400">Custom IAM role grants **Read Only** access to view the status of the Resource Group and its components for operational reporting.</p>
+                <p class="text-xs mt-2 dot-matrix-text text-blue-500">STATUS: ENABLED. CRITICAL OVERSIGHT.</p>
+            </div>
+
+            {% endif %}
+
+            <!-- Generic Security Panel (All roles can see) -->
+            <div class="access-card rounded-2xl p-6">
+                <h3 class="text-lg font-semibold mb-3 text-red-400">SECURITY AUDIT LOG</h3>
+                <p class="text-sm text-gray-500">Your login details (IP and timestamp) have been recorded for audit purposes.</p>
+                <p class="text-xs mt-2 dot-matrix-text text-red-500">LAST CHECK: SUCCESSFUL. FIREWALLS ACTIVE.</p>
+            </div>
+
+        </section>
+        
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+- CHALLENGES ---------------- STARS ---- VULNERABILITIES ---------
+
+Mark
+1. Exposed Credentials      - **.... - > Sensitive Data Exposure
+2. Upload Size              - ***... - > Impeoper Input Validation
+3. Database Schema          - ***... - . Injection
+4. User Credentials         - ****.. - . Injection
+5. Retrieve Blueprint       - *****. - > Sensitive Data Exposure
+
+Joseph
+1. View Basket              - **.... - . Broken Access Control
+2. Login Admin              - **.... - > Injection
+3. Login Bender             - ***... - > Injection
+4. Reset Bender's Password  - ****.. - > Broken Authentication
+5. Expired Coupon           - ****.. - . Improper Input Validation
+
+Ken
+1. Deprecated Interface     - **.... - > Security Misconfiguration
+2. Forged Feedback          - ***... - . Broken Access Control
+3. CAPTCHA Bypass           - ***... - . Broken Anti Automation
+4. Christmas Special        - ****.. - . Injection
+5. Forged Coupon            - ****** - > Cryptographic Issues
+
+Maël
+1. Password Hash Leak       - **.... - . Sensitive Data Exposure
+2. Deluxe Fraud             - ***... - . Improper Input Validation
+3. Product Tampering        - ***... - > Broken Access Control
+4. Misplaced Signature File - ****.. - > Observability Failures
+5. Extra Language           - *****. - . Broken Anti Automation
+[Extra]
+6. Easter Egg               - ****.. - > Broken Access Control
+7. Nested Easter Egg        - ****.. - . Cryptographic Issues

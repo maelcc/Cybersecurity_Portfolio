@@ -1,0 +1,251 @@
+/** Main Area **/
+
+main {
+    flex: 1; /* Takes full space to keep the footer at the bottom */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 20px;
+}
+
+
+/* Vertical Nav Bar */
+
+main nav {
+    background-color: #000000AA;
+    border: 1px solid grey;
+    border-radius: 8px;
+    box-shadow: 4px 4px 20px 2px #000000AA;
+}
+
+main nav ul {
+    margin: 0;
+    padding: 0;
+    width: 160px;
+    list-style-type: none;
+}
+
+main nav a {
+    display: block;
+    margin: 15px;
+    padding: 15px 10px;
+    text-align: center;
+    color: lightgray;
+    font-size: larger;
+}
+
+main nav a:hover,
+main nav a.active {
+    padding: 14px 9px;
+    background-color: #111111;
+    border: 1px solid tan;
+    border-radius: 4px;
+    box-shadow: 4px 4px 20px 2px #000000AA;
+}
+
+
+/* Main Content Sections */
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 60px;
+    background-color: #000000AA;
+    backdrop-filter: blur(5px);
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 4px 4px 20px 2px #000000AA;
+}
+
+article {
+    flex: 2 200px; /* The article takes 2/3rds of the element & stops shrinking after 200px */
+    padding: 40px;
+    background-color: #00000060;
+    border: 1px solid tan;
+    border-radius: 6px;
+    box-shadow: 4px 4px 20px 2px #000000AA;
+}
+
+article a:link {
+    font-weight: bold;
+}
+
+section img {
+    flex: 1; /* To take the 1/3rd left */
+    max-width: 500px;
+    border: 1px solid tan;
+    border-radius: 8px;
+    box-shadow: 4px 4px 20px 2px #00000060;
+}
+
+
+/* Protagonists, Antagonists, Series, Books, Videogames, and Merchandise Pages */
+
+.inner_structure_block { /* This is an invisible element that I used to organise some of the articles and images within the pages */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* Characters, Stories, and Merchandise Pages */
+
+.outer_structure_block { /* This is also another invisible element, but this one is for organising main sections in a couple of pages */
+    flex: 1; /* I need it to take the full space so that I can horizontally centre the elements inside it to make it look nicer on the page */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.outer_structure_block h1 {
+    margin: 0;
+}
+
+.outer_structure_block a section:hover {
+    background-color: #111111;
+    border-color: tan;
+}
+
+.outer_structure_block section {
+    max-width: 900px;
+    padding: 30px;
+}
+
+.outer_structure_block img {
+    max-width: 300px;
+}
+
+
+/* Protagonists Page */
+
+.protagonist_image {
+    max-width: 200px; 
+}
+
+
+/* Merchandise Page */
+
+section nav { /* This horizontal nav copies the header nav by tweaking a couple of things since its parent element was configured as a vertical nav (the main nav) */
+    background-color: #00000060;
+}
+
+section nav ul {
+    padding: 5px;
+    width: auto;
+    overflow: hidden;
+}
+
+section nav li {
+    float: left;
+}
+
+section nav a {
+    margin: 0;
+    padding: 5px 15px;
+}
+
+section nav a:hover,
+section nav a.active {
+    padding: 4px 14px;
+    border: 1px solid tan;
+    border-radius: 4px;
+}
+
+ol .inner_structure_block {
+    justify-content: space-between; /* To nicesly space out the texts and images */
+}
+
+ol img {
+    width: 200px;
+}
+
+ol img:hover {
+    border-color: black;
+    border-radius: 50px;
+}
+
+ol hr {
+    margin-left: 0;
+}
+
+
+/* Screen Size Area */
+
+@media (max-width: 1125px) {
+    main {
+        gap: 40px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    ol .inner_structure_block { /* This is here to make all merch images go down (under the text) at once instead of one by one as the page shrinks */
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media (max-width: 800px) {
+    main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    main nav { /* This section converts the initially vertical nav bar into a horizontal one */
+        background-color: #000000AA;
+        border: 1px solid grey;
+        border-radius: 8px;
+        box-shadow: 4px 4px 20px 2px #000000AA;
+    }
+    
+    main nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+    }
+
+    main nav a {
+        margin: 0;
+        padding: 5px 10px;
+    }
+    
+    main nav a:hover,
+    main nav a.active {
+        padding: 4px 9px;
+    }
+
+    main nav hr {
+        margin: 0 4px;
+        height: 20px;
+        width: 2px;
+    }
+
+    article {
+        padding: 20px;
+    }
+
+    section img {
+        max-width: 100%; /* This is to make the image take the full available space, it looks nicer this way, and it's adaptive */
+    }
+
+    .outer_structure_block img {
+        display: none; /* These images (on the characters and stories pages) are just too big so I'd rather have them be gone */
+    }
+
+    .outer_structure_block ol img {
+        display: block; /* This is too keep the merch pages since the css right before removes them */
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStart :: Access Gateway</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Font for NothingOS Vibe - Using monospace/dot-matrix feel */
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+        /* Define the core monochrome theme */
+        :root {
+            --color-primary: #FFFFFF;
+            --color-secondary: #000000;
+            --color-accent: #EF4444;
+            /* Functional Red */
+            --font-mono: 'Space Mono', monospace;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-secondary);
+            color: var(--color-primary);
+        }
+
+        /* Specific style for the dot-matrix inspired clock/title */
+        .dot-matrix-text {
+            font-family: var(--font-mono);
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+
+    <!-- Main Container Card -->
+    <div
+        class="w-full max-w-sm bg-gray-900 border border-gray-700/50 p-8 rounded-3xl shadow-2xl transition-all duration-300">
+
+        <!-- Header / Clock -->
+        <div class="mb-8 border-b border-gray-700/50 pb-4">
+            <p id="current-time" class="dot-matrix-text text-xl font-bold text-center"></p>
+            <h1 class="text-3xl font-bold tracking-tight text-center mt-2">ACCESS GATEWAY</h1>
+            <p class="text-xs text-gray-500 text-center uppercase tracking-wider mt-1">TechStart Solutions Secure Login
+            </p>
+        </div>
+
+        <!-- Login Form -->
+        <form method="POST" action="/login" class="space-y-6">
+
+            <!-- Email Input -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-400">EMAIL ADDRESS</label>
+                <div class="mt-1">
+                    <input id="email" name="email" type="email" required
+                        class="w-full px-4 py-2 bg-black border border-gray-700/50 text-white rounded-xl focus:border-red-500 focus:ring-red-500 shadow-inner placeholder-gray-600 transition-colors"
+                        placeholder="user.name@techstart.com">
+                </div>
+            </div>
+
+            <!-- Password Input -->
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-400">PASSCODE</label>
+                <div class="mt-1">
+                    <input id="password" name="password" type="password" required
+                        class="w-full px-4 py-2 bg-black border border-gray-700/50 text-white rounded-xl focus:border-red-500 focus:ring-red-500 shadow-inner placeholder-gray-600 transition-colors"
+                        placeholder="Enter your confidential password">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit"
+                    class="w-full flex justify-center items-center py-2 px-4 border border-transparent rounded-xl shadow-sm text-sm font-medium text-black bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-colors duration-200 uppercase tracking-widest font-bold">
+                    Authenticate
+                </button>
+            </div>
+        </form>
+
+        <!-- Footer Security Note -->
+        <div class="mt-8 pt-4 border-t border-gray-700/50 text-center">
+            <p class="text-xs text-red-500 dot-matrix-text">
+                <span class="inline-block mr-1">&#9679;</span>
+                SECURED ON PORT 443 (TLS ENCRYPTED)
+            </p>
+            <p class="text-xs text-gray-600 mt-1">
+                Security Policy V 4.0.0 enforced.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Real-time clock script using the dot-matrix style
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-GB', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            }).replace(/:/g, ' . ');
+            document.getElementById('current-time').textContent = timeString;
+        }
+
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+
+</html>
