@@ -1,45 +1,44 @@
-# -{REPO WORK IN PROGRESS}-
-
----
-
 # Cybersecurity Portfolio
 
-Maël Conejos Crusson
+This portfolio contains the projects I completed across three years of cybersecurity coursework. The projects cover many aspects of cybersecurity: programming, databases, operating systems, web development, cloud security, and offensive and defensive security. Together, they demonstrate the practical skills I built over the course of my studies.
 
-This repository is a collection of 11 hands-on cybersecurity projects that I built to develop and demonstrate practical skills across the field. Each project is self-contained in its own folder and documents the full journey from initial goal to final result: what the project set out to achieve, the technologies, tools and methods used, and my individual contribution to the work.
+Every project has its own folder with a README describing what it does, how it works, and what I learned from it.
 
-## About
+## Year 1
 
-The projects in this portfolio were carried out in isolated lab environments, on systems I own, or on platforms designed for security training. Together they cover [##########], and reflect both offensive and defensive perspectives on common security problems.
+### Semester 2
 
-## Projects
+- **Fundamentals of Programming 2** - a Python budget tracker application storing transactions in CSV, with a full unit test suite
+- **Operating Systems** - a study of the CPU and memory use of Windows processes, monitored across different usage scenarios
+- **Web Development Fundamentals** - an offline static fan website built from scratch with HTML and CSS, including a fictional marketplace
 
-| # | Project | Focus Area |
-| --- | --- | --- |
-| 01 | [Project title] | [Focus area] |
-| 02 | [Project title] | [Focus area] |
-| 03 | [Project title] | [Focus area] |
-| 04 | [Project title] | [Focus area] |
-| 05 | [Project title] | [Focus area] |
-| 06 | [Project title] | [Focus area] |
-| 07 | [Project title] | [Focus area] |
-| 08 | [Project title] | [Focus area] |
-| 09 | [Project title] | [Focus area] |
-| 10 | [Project title] | [Focus area] |
-| 11 | [Project title] | [Focus area] |
+## Year 2
 
-## Project Documentation
+### Semester 1
 
-Every project folder contains its own README that follows the same structure:
+- **Database Fundamentals** - a hospital relational database designed to third normal form and implemented in MySQL
+- **Network Security** - a comparison of three open-source firewalls (OPNsense, Smoothwall, VyOS) configured and attacked in an isolated virtual lab
+- **Scripting for Cybersecurity** - an automated threat intelligence auditor that enriches suspicious IP addresses using the AbuseIPDB API, built with PowerShell and Python
+- **Security Administration** - a secure Azure deployment of a web application, following the Principle of Least Privilege and Defence in Depth
 
-- **Purpose and outcome**: what the project set out to do and what it delivered
-- **Technologies, tools and methods**: the stack and techniques applied
-- **Individual contribution**: my specific role and work in the project
+### Semester 2
 
-## How to Navigate
+- **Advanced Scripting** - a PowerShell tool that scans web server, SSH, and PowerShell logs for suspicious activity and generates an investigation report
+- **Fundamentals of AI & Data Science** - machine learning models that classify network traffic as benign or malicious, with an analysis of class imbalance
+- **Security Architecture** - a highly available AWS architecture and proof of concept designed for a fictional startup
+- **Web Application Security** - a full security assessment of the OWASP Juice Shop, including SAST with Semgrep and DAST with OWASP ZAP
 
-Each folder is independent and can be explored in any order. Start with the README inside a project folder to understand its purpose, then follow the setup and usage notes it contains. The projects do not share dependencies.
+## Year 3 (in progress)
 
-## Legal and Ethical Disclaimer
+Four modules are currently underway and their projects will be added as they are completed:
 
-All activities documented in this portfolio were performed in controlled environments, on systems I own, or on platforms explicitly designed for security training. This material is published for educational and portfolio purposes only. Do not use these techniques, scripts or findings against any system without explicit authorisation from its owner. I do not condone or take responsibility for any misuse of the information in this repository.
+- AI for Cybersecurity
+- Digital Forensics
+- Ethics & Legal Compliance for Cybersecurity
+- Threat Landscape
+
+## Legal
+
+All projects in this repository were created for educational purposes only. They are the result of academic coursework and are published to demonstrate my learning and technical ability.
+
+Some projects involve security tools, techniques, or example vulnerabilities. These are intended strictly for learning in controlled, authorised environments. They must not be used against systems, networks, or applications without the explicit permission of their owners. I accept no liability for any misuse of the material in this repository.
